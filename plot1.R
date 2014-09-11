@@ -1,4 +1,4 @@
-fulldata <- read.csv("./Data/household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+fulldata <- read.csv("./household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
 fulldata$Date <- as.Date(fulldata$Date, format="%d/%m/%Y")
 
 data <- subset(fulldata, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
