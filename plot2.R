@@ -1,8 +1,8 @@
-data_full <- read.csv("./Data/household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
-data_full$Date <- as.Date(data_full$Date, format="%d/%m/%Y")
+fulldata <- read.csv("./Data/household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+fulldata$Date <- as.Date(fulldata$Date, format="%d/%m/%Y")
 
-data <- subset(data_full, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
-rm(data_full)
+data <- subset(fulldata, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+rm(fulldata)
 
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
